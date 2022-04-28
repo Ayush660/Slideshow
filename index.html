@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="slide">
+            <img src="img/11.jpg" alt="" >
+        </div>
+        <div class="slide">
+            <img src="img/12.jpg" alt="" >
+        </div>
+        <div class="slide">
+            <img src="img/13.jpg" alt="" >
+        </div>
+
+        <div class="prev" onclick="prevSlide()">&#10094;</div>
+        <div class="next" onclick="nextSlide()">&#10095;</div>
+
+        <div class="dot-container">
+            <span class="dot" onclick="current(1)"></span>
+            <span class="dot" onclick="current(2)"></span>
+            <span class="dot" onclick="current(3)"></span>
+        </div>
+    </div>
+
+    <!-- <br> -->
+
+    <script src="carousel.js"></script>
+</body>
+
+</html>
