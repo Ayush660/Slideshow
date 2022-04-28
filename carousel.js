@@ -1,26 +1,38 @@
 let slideIndex = 1;
+let timer;
 showSlide(slideIndex);
+timer = setInterval(nextSlide, 4000);
 
 document.onkeydown = function(e) {
-    if(String(e.key) == "ArrowLeft") {
+    if(e.key === "ArrowLeft") {
         prevSlide();
-    } else if(String(e.key) === "ArrowRight") {
+    } else if(e.key === "ArrowRight") {
         nextSlide();
     }
 }
 
 function nextSlide() {
+    clearInterval(timer);
     slideIndex += 1;
     showSlide(slideIndex);
+
+    timer = setInterval(nextSlide, 4000);
 }
 
 function prevSlide() {
+    clearInterval(timer);
     slideIndex -= 1;
     showSlide(slideIndex);
+
+    timer = setInterval(nextSlide, 4000);
 }
 
 function current(n) {
-    showSlide(slideIndex = n);
+    clearInterval(timer)
+    slideIndex = n;
+    showSlide(slideIndex);
+
+    timer = setInterval(nextSlide, 4000);
 }
 
 function showSlide(n) {
